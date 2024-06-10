@@ -1,19 +1,15 @@
 class QuestionsController < ApplicationController
-
-  def index
-  end
-
   def ask
   end
 
   def answer
-    @answer = []
-    if params[:question] == params[:question].upcase
-      "I can feel your motivation! I don't care"
-    elsif params[:question].include?("?")
-      "silly question, get dressed an go to work!"
-    elsif params[:question].is a?(String)
-      "I don't care"
-    end
+    @question = params[:question]
+    @answer = if @question == "I am going to work"
+                "Great!"
+              elsif @question.end_with?("?")
+                "Silly question, get dressed and go to work!"
+              else
+                "I don't care, get dressed and go to work!"
+              end
   end
 end
