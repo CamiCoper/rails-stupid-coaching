@@ -1,0 +1,10 @@
+<h1>Answer</h1>
+<% @answer %>
+
+<% if @answer == @answer.upcase %>
+  <% "I can feel your motivation" %>
+<% elsif your_message.include?("?")%>
+  <% "Silly" %>
+<% elsif your_message.is_a?(String) %>
+  <% "Go to work" %>
+<% end %>
